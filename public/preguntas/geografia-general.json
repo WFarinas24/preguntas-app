@@ -1,0 +1,84 @@
+{
+  "id": "geografia-general",
+  "titulo": "Geografía general",
+  "descripcion": "Capitales, continentes, banderas y océanos",
+  "version": 1,
+  "config": {
+    "puntajeMaximo": 100,
+    "umbralAprobacion": 70,
+    "mostrarRespuestaCorrecta": true
+  },
+  "preguntas": [
+    {
+      "id": "g-01",
+      "enunciado": "¿Cuál es la capital de Japón?",
+      "peso": 2,
+      "opciones": [
+        { "id": "a", "texto": "Kioto", "esCorrecta": false },
+        { "id": "b", "texto": "Tokio", "esCorrecta": true },
+        { "id": "c", "texto": "Osaka", "esCorrecta": false },
+        { "id": "d", "texto": "Seúl", "esCorrecta": false }
+      ],
+      "explicacion": "Tokio es la capital de Japón desde 1869."
+    },
+    {
+      "id": "g-02",
+      "enunciado": "¿Cuál es el continente más grande del planeta?",
+      "peso": 1,
+      "opciones": [
+        { "id": "a", "texto": "África", "esCorrecta": false },
+        { "id": "b", "texto": "América", "esCorrecta": false },
+        { "id": "c", "texto": "Asia", "esCorrecta": true },
+        { "id": "d", "texto": "Europa", "esCorrecta": false }
+      ],
+      "explicacion": "Asia ocupa cerca de un tercio de la superficie terrestre."
+    },
+    {
+      "id": "g-03",
+      "enunciado": "Observa las banderas. ¿Cuál corresponde a Brasil?",
+      "peso": 3,
+      "opciones": [
+        {
+          "id": "a",
+          "texto": "Bandera A",
+          "imagen": {
+            "url": "https://placehold.co/200x120/0b3d2e/facc15/png?text=Verde+y+amarillo",
+            "alt": "Bandera verde con un rombo amarillo"
+          },
+          "esCorrecta": true
+        },
+        {
+          "id": "b",
+          "texto": "Bandera B",
+          "imagen": {
+            "url": "https://placehold.co/200x120/ffffff/ef4444/png?text=Blanca+y+roja",
+            "alt": "Bandera blanca con una franja roja"
+          },
+          "esCorrecta": false
+        },
+        {
+          "id": "c",
+          "texto": "Bandera C",
+          "imagen": {
+            "url": "https://placehold.co/200x120/1d4ed8/ffffff/png?text=Azul+y+blanca",
+            "alt": "Bandera azul con una franja blanca"
+          },
+          "esCorrecta": false
+        }
+      ],
+      "explicacion": "La bandera de Brasil es verde con un rombo amarillo y un círculo azul."
+    },
+    {
+      "id": "g-04",
+      "enunciado": "Según el modelo más aceptado, ¿cuántos océanos hay en el planeta?",
+      "peso": 1,
+      "opciones": [
+        { "id": "a", "texto": "4", "esCorrecta": false },
+        { "id": "b", "texto": "5", "esCorrecta": true },
+        { "id": "c", "texto": "6", "esCorrecta": false },
+        { "id": "d", "texto": "7", "esCorrecta": false }
+      ],
+      "explicacion": "Pacífico, Atlántico, Índico, Ártico y Austral (o Antártico)."
+    }
+  ]
+}
