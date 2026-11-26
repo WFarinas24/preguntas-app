@@ -2,16 +2,10 @@
   "version": 1,
   "temas": [
     {
-      "id": "matematicas-basicas",
-      "titulo": "Matemáticas básicas",
-      "descripcion": "Operaciones, fracciones, porcentajes y figuras geométricas",
-      "archivo": "matematicas-basicas.json"
-    },
-    {
-      "id": "geografia-general",
-      "titulo": "Geografía general",
-      "descripcion": "Capitales, continentes, banderas y océanos",
-      "archivo": "geografia-general.json"
+      "id": "practica_cosevi",
+      "titulo": "Cosevi Motos",
+      "descripcion": "Preguntas enfocadas en el examen de Cosevi CR",
+      "archivo": "practica_cosevi.json"
     }
   ]
 }

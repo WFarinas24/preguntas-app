@@ -1,9 +1,10 @@
-export default function ThemeSelector({ temas, onIniciar, onRepasar }) {
+export default function ThemeSelector({ temas, onElegir, onRepasar }) {
   return (
     <section>
       <h1 className="text-3xl font-bold tracking-tight text-white">Elige un tema</h1>
       <p className="mt-2 text-slate-400">
-        Cada intento mezcla las preguntas y sus opciones en un orden aleatorio.
+        Elige un tema y después indica cuántas preguntas quieres. Cada intento mezcla
+        las preguntas y sus opciones en un orden aleatorio.
       </p>
 
       <ul className="mt-6 grid gap-3 sm:grid-cols-2">
@@ -36,7 +37,7 @@ export default function ThemeSelector({ temas, onIniciar, onRepasar }) {
           <li key={tema.id}>
             <button
               type="button"
-              onClick={() => onIniciar(tema)}
+              onClick={() => onElegir(tema)}
               className="h-full w-full rounded-2xl border border-slate-800 bg-slate-900/60 p-5 text-left transition hover:border-indigo-400/70 hover:bg-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
             >
               <span className="block text-lg font-semibold text-white">
@@ -46,7 +47,7 @@ export default function ThemeSelector({ temas, onIniciar, onRepasar }) {
                 {tema.descripcion}
               </span>
               <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-indigo-400">
-                Comenzar
+                Configurar
                 <svg
                   aria-hidden="true"
                   viewBox="0 0 20 20"

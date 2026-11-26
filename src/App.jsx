@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react'
 import { ErrorState, LoadingState } from './components/AsyncState'
 import Configuracion from './components/Configuracion'
+import ExamenConfig from './components/ExamenConfig'
 import Header from './components/Header'
 import History from './components/History'
 import Quiz from './components/Quiz'
@@ -19,9 +20,11 @@ export default function App() {
   const mensajeCarga =
     quiz.vista === VISTAS.TEMAS && quiz.temas.length === 0
       ? 'Cargando temas…'
-      : quiz.vista === VISTAS.JUGANDO
-        ? 'Preparando el cuestionario…'
-        : 'Cargando…'
+      : quiz.vista === VISTAS.CONFIGURAR_EXAMEN
+        ? 'Cargando tema…'
+        : quiz.vista === VISTAS.JUGANDO
+          ? 'Preparando el cuestionario…'
+          : 'Cargando…'
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100">
@@ -74,8 +77,19 @@ export default function App() {
               <div className="mx-auto max-w-2xl">
                 <ThemeSelector
                   temas={quiz.temas}
-                  onIniciar={quiz.iniciar}
+                  onElegir={quiz.elegirTema}
                   onRepasar={quiz.irARepaso}
+                />
+              </div>
+            )}
+
+            {quiz.vista === VISTAS.CONFIGURAR_EXAMEN && quiz.temaSeleccionado && (
+              <div className="mx-auto max-w-2xl">
+                <ExamenConfig
+                  key={quiz.temaSeleccionado.id}
+                  tema={quiz.temaSeleccionado}
+                  onComenzar={quiz.comenzarExamen}
+                  onVolver={quiz.nuevoExamen}
                 />
               </div>
             )}

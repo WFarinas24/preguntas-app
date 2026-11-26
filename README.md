@@ -24,6 +24,9 @@ GitHub Pages. En desarrollo abre `http://localhost:5173/preguntas-app/` y en pre
   completa y se puede borrar el registro.
 - El botón **Nuevo examen** de la cabecera abre el selector de temas, donde también
   está la opción de **Repasar preguntas falladas**.
+- Al elegir un tema se abre una pantalla para indicar cuántas preguntas se van a
+  usar. El valor por defecto es 40, limitado al total del tema; se toman preguntas
+  aleatorias sin repetir. **Repetir tema** vuelve a usar el mismo subconjunto.
 - Durante el examen se muestra el tiempo transcurrido. El botón **Salir** pide
   confirmación: al confirmar, el examen se descarta por completo (no se guarda ni
   afecta las estadísticas).

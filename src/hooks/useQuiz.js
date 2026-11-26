@@ -15,6 +15,7 @@ import {
 const VISTAS = {
   HISTORIAL: 'historial',
   TEMAS: 'temas',
+  CONFIGURAR_EXAMEN: 'configurarExamen',
   REPASO: 'repaso',
   JUGANDO: 'jugando',
   RESULTADO: 'resultado',
@@ -28,6 +29,7 @@ export function useQuiz() {
   const [temas, setTemas] = useState([])
   const [intentos, setIntentos] = useState([])
   const [temaActual, setTemaActual] = useState(null)
+  const [temaSeleccionado, setTemaSeleccionado] = useState(null)
   const [orden, setOrden] = useState([])
   const [indice, setIndice] = useState(0)
   const [respuestas, setRespuestas] = useState({})
@@ -84,20 +86,35 @@ export function useQuiz() {
     setVista(VISTAS.JUGANDO)
   }, [])
 
-  const iniciar = useCallback(
-    async (temaCatalogo) => {
-      setCargando(true)
-      setError(null)
-      try {
-        const tema = await loadTheme(temaCatalogo)
-        empezar(tema, Date.now())
-      } catch (e) {
-        setError(e.message || 'No se pudo cargar el tema.')
-      } finally {
-        setCargando(false)
+  const elegirTema = useCallback(async (temaCatalogo) => {
+    setCargando(true)
+    setError(null)
+    try {
+      const tema = await loadTheme(temaCatalogo)
+      setTemaSeleccionado(tema)
+      setVista(VISTAS.CONFIGURAR_EXAMEN)
+    } catch (e) {
+      setError(e.message || 'No se pudo cargar el tema.')
+    } finally {
+      setCargando(false)
+    }
+  }, [])
+
+  const comenzarExamen = useCallback(
+    (cantidad) => {
+      if (!temaSeleccionado) return
+      const total = Math.max(
+        1,
+        Math.min(cantidad, temaSeleccionado.preguntas.length),
+      )
+      const tema = {
+        ...temaSeleccionado,
+        preguntas: prepararPreguntas(temaSeleccionado.preguntas).slice(0, total),
       }
+      setTemaSeleccionado(null)
+      empezar(tema, Date.now())
     },
-    [empezar],
+    [temaSeleccionado, empezar],
   )
 
   const seleccionar = useCallback(
@@ -217,6 +234,7 @@ export function useQuiz() {
   }, [])
 
   const nuevoExamen = useCallback(() => {
+    setTemaSeleccionado(null)
     setError(null)
     setVista(VISTAS.TEMAS)
   }, [])
@@ -245,6 +263,7 @@ export function useQuiz() {
 
   // Salir del examen lo descarta por completo: no se guarda ni se contabiliza.
   const irAHistorial = useCallback(() => {
+    setTemaSeleccionado(null)
     setTemaActual(null)
     setOrden([])
     setIndice(0)
@@ -271,6 +290,7 @@ export function useQuiz() {
     temas,
     intentos,
     temaActual,
+    temaSeleccionado,
     preguntaActual: orden[indice] ?? null,
     indice,
     total: orden.length,
@@ -280,7 +300,8 @@ export function useQuiz() {
     cargando,
     error,
     cargarCatalogo,
-    iniciar,
+    elegirTema,
+    comenzarExamen,
     irARepaso,
     comenzarRepaso,
     seleccionar,
