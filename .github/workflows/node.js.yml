@@ -25,7 +25,6 @@ jobs:
         with:
           node-version: 22.x
           cache: npm
-          cache-dependency-path: preguntas-app/package-lock.json
 
       - name: Install dependencies
         working-directory: ./preguntas-app
