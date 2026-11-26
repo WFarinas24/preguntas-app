@@ -12,6 +12,11 @@ npm run dev
 
 `npm run build` genera la versión de producción y `npm run lint` verifica el código.
 
+La app está configurada con `base: '/preguntas-app/'` en `vite.config.js` para
+GitHub Pages. En desarrollo abre `http://localhost:5173/preguntas-app/` y en preview
+`http://localhost:4173/preguntas-app/`. Los JSON de temas se cargan desde
+`/preguntas-app/preguntas/` usando `import.meta.env.BASE_URL`.
+
 ## Uso
 
 - La página principal lista los exámenes realizados con tema, fecha y hora, duración,
