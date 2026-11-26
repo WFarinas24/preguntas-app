@@ -1,0 +1,77 @@
+{
+  "id": "matematicas-basicas",
+  "titulo": "Matemáticas básicas",
+  "descripcion": "Operaciones, fracciones, porcentajes y figuras geométricas",
+  "version": 1,
+  "config": {
+    "puntajeMaximo": 100,
+    "umbralAprobacion": 70,
+    "mostrarRespuestaCorrecta": true
+  },
+  "preguntas": [
+    {
+      "id": "q-01",
+      "enunciado": "¿Cuánto es 7 × 8?",
+      "peso": 2,
+      "opciones": [
+        { "id": "a", "texto": "54", "esCorrecta": false },
+        { "id": "b", "texto": "56", "esCorrecta": true },
+        { "id": "c", "texto": "64", "esCorrecta": false },
+        { "id": "d", "texto": "48", "esCorrecta": false }
+      ],
+      "explicacion": "7 × 8 = 56."
+    },
+    {
+      "id": "q-02",
+      "enunciado": "¿Cuál de estas fracciones es equivalente a 1/2?",
+      "peso": 1,
+      "opciones": [
+        { "id": "a", "texto": "2/3", "esCorrecta": false },
+        { "id": "b", "texto": "2/5", "esCorrecta": false },
+        { "id": "c", "texto": "3/6", "esCorrecta": true },
+        { "id": "d", "texto": "4/5", "esCorrecta": false }
+      ],
+      "explicacion": "3/6 se simplifica a 1/2 al dividir numerador y denominador entre 3."
+    },
+    {
+      "id": "q-03",
+      "enunciado": "Un artículo cuesta $200 y tiene un descuento del 15 %. ¿Cuál es el precio final?",
+      "peso": 3,
+      "opciones": [
+        { "id": "a", "texto": "$170", "esCorrecta": true },
+        { "id": "b", "texto": "$180", "esCorrecta": false },
+        { "id": "c", "texto": "$185", "esCorrecta": false },
+        { "id": "d", "texto": "$215", "esCorrecta": false }
+      ],
+      "explicacion": "El 15 % de 200 es 30, por lo que 200 − 30 = 170."
+    },
+    {
+      "id": "q-04",
+      "enunciado": "Observa el rectángulo de la imagen. ¿Cuál es su área si mide 6 cm × 4 cm?",
+      "peso": 2,
+      "imagen": {
+        "url": "https://placehold.co/600x220/1e293b/94a3b8/png?text=Rectangulo+6cm+x+4cm",
+        "alt": "Dibujo de un rectángulo etiquetado con 6 centímetros de base y 4 de altura"
+      },
+      "opciones": [
+        { "id": "a", "texto": "10 cm²", "esCorrecta": false },
+        { "id": "b", "texto": "20 cm²", "esCorrecta": false },
+        { "id": "c", "texto": "24 cm²", "esCorrecta": true },
+        { "id": "d", "texto": "48 cm²", "esCorrecta": false }
+      ],
+      "explicacion": "El área de un rectángulo es base × altura: 6 × 4 = 24 cm²."
+    },
+    {
+      "id": "q-05",
+      "enunciado": "¿Cuál es el resultado de 3/4 + 1/4?",
+      "peso": 1,
+      "opciones": [
+        { "id": "a", "texto": "1/2", "esCorrecta": false },
+        { "id": "b", "texto": "4/8", "esCorrecta": false },
+        { "id": "c", "texto": "1", "esCorrecta": true },
+        { "id": "d", "texto": "1/8", "esCorrecta": false }
+      ],
+      "explicacion": "3/4 + 1/4 = 4/4 = 1."
+    }
+  ]
+}
